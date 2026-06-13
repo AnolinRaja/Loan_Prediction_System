@@ -1,11 +1,11 @@
-# Production requirements - Updated 2026-06-13T17:25
-# For Python 3.14 compatibility with pre-built wheels only
+# Production requirements - Python 3.14 with pre-built wheels ONLY
+# Updated 2026-06-13T17:38 - Pydantic-core issue fix
 pip>=24.0
 setuptools>=70.0.0
 wheel>=0.43.0
 fastapi==0.110.0
 uvicorn[standard]==0.27.0
-pydantic==2.7.0
+pydantic==2.9.2
 numpy==2.1.0
 scikit-learn==1.5.0
 joblib==1.4.2
