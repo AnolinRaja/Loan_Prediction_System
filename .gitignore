@@ -1,33 +1,77 @@
+# ===== ENVIRONMENT & SECRETS =====
+.env
+.env.*
+!.env.example
+!.env.development
+!.env.production
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+.secrets/
+
 # ===== FRONTEND (.gitignore frontend specific) =====
 frontend/node_modules/
 frontend/build/
+frontend/dist/
 frontend/.env
 frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/.DS_Store
+frontend/.cache/
+frontend/.turbo/
 
 # ===== BACKEND (.gitignore backend specific) =====
 backend/venv/
 backend/.venv/
+backend/env/
+backend/ENV/
 backend/__pycache__/
 backend/*.pyc
+backend/*.pyo
+backend/*.pyd
 backend/*.pkl
+backend/*.joblib
 backend/.env
 backend/.env.local
-backend/models/
 backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+backend/dist/
+backend/build/
+backend/*.egg-info/
+backend/.eggs/
 
-# ===== ROOT DIRECTORY =====
-# Root level Python files (duplicates kept for reference, not tracked)
-*.py
-!setup.py
+# ===== DATABASE =====
+*.db
+*.sqlite
+*.sqlite3
+database.db
+local.db
 
-# Data files (kept locally, not pushed)
+# ===== DATA FILES (kept locally, not tracked) =====
 *.csv
 Loan_default.csv
 final_features.csv
+*.xlsx
+*.xls
+*.parquet
+data/
+datasets/
+
+# ===== MODELS (Optional - comment out if needed in git) =====
+*.pkl
+*.h5
+*.joblib
+*.model
+models/
+saved_models/
 
 # ===== SYSTEM FILES =====
 .DS_Store
@@ -35,3 +79,35 @@ Thumbs.db
 .vscode/settings.json
 .idea/
 *.log
+*.swp
+*.swo
+*~
+.cache
+.pytest_cache
+
+# ===== DOCKER =====
+docker-compose.override.yml
+.dockerignore
+
+# ===== IDE & EDITOR =====
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ===== OS SPECIFIC =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===== BUILD & DIST =====
+dist/
+build/
+*.egg-info/
+.eggs/
+*.dist-info/
