@@ -1,0 +1,266 @@
+/* Charts.css - Professional Dark Theme Charts Styles */
+
+.charts-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.charts-container h2 {
+    color: var(--text-primary);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* No Chart State */
+.no-chart {
+    text-align: center;
+    padding: clamp(3rem, 8vw, 5rem) 1rem;
+    color: var(--text-tertiary);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    border: 2px dashed var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.no-chart:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-hover);
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 80vw, 500px), 1fr));
+    gap: clamp(1.25rem, 3vw, 2rem);
+    margin-bottom: 2rem;
+}
+
+/* Chart Card */
+.chart-card {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    min-height: clamp(280px, 50vw, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.chart-card svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Statistics Summary */
+.statistics-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 70vw, 280px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.stat-item {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.stat-label {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: var(--text-tertiary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.stat-value span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.6rem, 1vw, 0.75rem);
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.stat-value span:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-tertiary);
+}
+
+/* Plotly Chart Customization */
+.chart-card .plotly {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-card .plotly-graph-div {
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--bg-tertiary) !important;
+}
+
+/* SVG Text & Path */
+.chart-card text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    fill: var(--text-secondary);
+}
+
+/* Plotly Custom Colors for Dark Theme */
+.chart-card .plotly-graph-div .xtick text,
+.chart-card .plotly-graph-div .ytick text {
+    color: var(--text-secondary) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .chart-card {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .chart-card {
+        min-height: 300px;
+        padding: 1rem;
+    }
+
+    .statistics-summary {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .stat-item {
+        padding: 1rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .stat-value {
+        font-size: 1rem;
+    }
+
+    .stat-value span {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.6rem;
+    }
+
+    .no-chart {
+        padding: 3rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .chart-card {
+        min-height: 250px;
+        padding: 0.75rem;
+    }
+
+    .statistics-summary {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .stat-item {
+        padding: 0.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .stat-value {
+        font-size: 0.95rem;
+        flex-direction: column;
+    }
+
+    .stat-value span {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 0.8rem;
+    }
+
+    .no-chart {
+        padding: 2rem 0.75rem;
+        font-size: 0.95rem;
+    }
+}
